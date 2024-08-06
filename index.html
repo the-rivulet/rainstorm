@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <title>rainstorm 0.1.0</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="rainstorm">
+      <!-- the main rulebook... -->
+      <h2 style="display: inline">Welcome to Rainstorm</h2> | <span>ver. 0.1.0</span><br/>
+      <h3>OVERVIEW</h3>
+      <div id="overview">
+        Rainstorm is a Rain World TTRPG created by [Rivu](rivu). It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
+        It is based on Monsoon and will probably feel somewhat similar if you have played that before.
+        <br/>
+        Contibutions are welcome! You can create a pull request on the repository or just DM Rivu about it.
+      </div>
+      <h3>CHARACTER CREATION</h3>
+      <h4>Creation Steps</h4>
+      <div id="steps">
+        [TODO]
+      </div>
+      <h4>Stats</h4>
+      Each creature has <b>abilities</b>:
+      <ul id="abilities">
+        <li id="awareness"><b>Awareness</b>:
+          A creature with high Awareness is always prepared and quick to react, whether through honed instinct or keen senses.
+          High Awareness makes a creature more likely to [go first](initiative) in combat and [dodge incoming attacks](Armor_Class).
+        </li>
+        <li id="finesse"><b>Finesse</b>:
+          A creature with high Finesse is accurate and has great attention to detail.
+          High Finesse makes a creature more likely to hit with its [attacks](attacks).
+        </li>
+        <li id="power"><b>Power</b>:
+          A creature with high Power has high physical strength.
+          High Power makes a creature deal more damage with many physical attacks.
+        </li>
+      </ul>
+      [TODO: Add more abilities.]
+      <br/>
+      They also have various other <b>stats</b>:
+      <ul id="stats">
+        <li id="speed"><b>Speed</b> is how far a creature can move on its turn.</li>
+        <li id="jump"><b>Jump</b> is how high or far a creature can jump.</li>
+        <li id="Armor_Class"><b>Armor Class</b> (AC) is how difficult it is to hit a creature. This is usually equal to 3 + the creature's [Awareness](awareness).</li>
+      </ul>
+      <h4>Species</h4>
+      <div id="species">
+        A character's species affects many of its starting stats.
+        <h5>Slugcat</h5>
+        <div id="slugcat">
+          <i>Lost in a harsh and indifferent land you must make your own way, with wit and caution as your greatest assets.</i><br/>
+          Maximum HP: 10
+          Unarmed Attack: 1 + Power damage.
+          [TODO: Special stuff.]
+        </div>
+      </div>
+      <h3>ADAPTATIONS</h3>
+      <div id="adaptations">
+        Adaptations are a character's special abilities. The combination of adaptations is what makes a character unique.
+        [TODO]
+      </div>
+      <h3>BASIC RULES</h3>
+      <div id="Basic_Rules">
+        <h4>Checks and Contests</h4>
+        <div id="checks">
+          To make a check, roll a six-sided die (1d6) and add the relevant [ability score](abilities), then compare the total to a target number.
+          If the check total is equal or greater than the target, the check is successful.
+          <div id="Difficulty_Class">For an attack, the target number is the defender's [Armor Class](Armor_Class). Most other checks have a certain <b>Difficulty Class</b>.</div>
+        </div>
+        <div id="contests">
+          In a contest, two creatures both make checks. The creature with the highest total is the winner.
+          In case of a tie, the creature that began the contest is the winner.
+        </div>
+        <h4>Distance</h4>
+        <div id="distance">
+          In Rainstorm, distance is counted orthogonally. Diagonal moves are always counted as 2.
+          <div id="adjacency">Two tiles are <b>adjacent</b> if they touch orthogonally (a distance of 1).</div>
+        </div>
+        <h4>Falling</h4>
+        <div id="falling">
+          After landing from a [drop](dropping), a creature takes 1 damage for each tile it fell above 10.
+          <div id="Damage_Transfer">If the fall was broken by another creature, half the damage (rounded down) is transferred to it.</div>
+        </div>
+        <h4>Crafting</h4>
+        <div id="crafting">
+          [TODO]
+        </div>
+      </div>
+      <h3>INVENTORY</h3>
+      <div id="inventory">
+        Characters can carry [items](items) using these inventory slots:
+        <ul id="Character_Inventory">
+          <li>Two hand slots, which can each carry a small or medium item. If you have at least one hand, you can also use all your hand slots to carry a large item.</li>
+          <li>One mouth slot, which can carry a small item.</li>
+        </ul>
+        You can manage your inventory by taking these [actions](actions):
+        <ul id="Inventory_Actions">
+          <li>Drop an item from a hand slot, placing it in your space. If you aren't on a [safe](Safe_Tile) tile, it will fall until it reaches one.</li>
+          <li>Pick up an item from your space or an item [embedded](embedding) in an [adjacent](adjacency) tile.</li>
+        </ul>
+        Non-character creatures don't have any inventory slots by default.
+      </div>
+      <h3>COMBAT</h3>
+      <div id="combat">
+        Rainstorm's pride. Combat takes place on a 2D map with one horizontal and one vertical dimension.
+        <h4>Combat Flow</h4>
+        <div id="Combat_Flow">
+          A combat usually follows these steps:
+          <ol>
+            <li id="initiative">At the start of combat, each creature makes an [Awareness](awareness) [check](checks). The total becomes their <b>Initiative</b> for the combat. Players win Initiative ties.</li>
+            <li>Each creature acts in order of Initiative, highest to lowest.</li>
+            <li>After all creatures have acted, the next round starts. Step 2 repeats until the combat is over.</li>
+          </ol>
+        </div>
+        <h4>Turn Flow</h4>
+        <div id="Turn_Flow">
+          <span id="actions">Each creature has two actions to spend on their turn.</span>
+          They can also move a number of tiles equal to their [Speed](speed).
+          Creatures usually can't take actions or move outside of their own turn.
+        </div>
+        <h4>Movement</h4>
+        <div id="movement">
+          A creature can move up, left, or right by spending 1 tile of [movement](speed). If the destination is [unsafe](Safe_Tile), the move <b>also</b> costs 1 tile of [jump height](jump).
+          <div id="dropping">To move down, a creature's only option is to <b>fall</b>, moving downwards until it reaches a pole or [safe](Safe_Tile) tile. If the fall was stopped by a safe tile, the creature also risks [fall damage](falling).</div>
+          <div id="space">A creature can move through an allied creature's space but cannot stop there. However, one tile can contain any number of items, including corpses.</div>
+        </div>
+        <h4>Attacks</h4>
+        <div id="attacks">
+          An attack is a special kind of [Finesse](finesse) [check](checks) against the target's AC. Attacks come in two types: melee and projectile.
+          <div id="Melee_Attacks">
+            <b>Melee</b> attacks target one creature within a certain [distance](distance). If the check succeeds, the attack hits it.
+            "Strike:" effects of items trigger on a melee hit.
+            <h5>Unarmed Attacks</h5>
+            <div id="unarmed">
+              Any creature can make a melee attack by spending one [action](actions). The damage dealt depends on the type of creature that used it, noted in each creature's description.
+            </div>
+          </div>
+          <br/>
+          <div id="Projectile_Attacks">
+            <b>Projectile</b> attacks are launched in a straight line. For each creature in the line, if the check equals or beats its [AC](Armor_Class), the attack hits it.
+            If the projectile hits a solid object that blocks movement, it hits it and stops.
+            <h5>Damage Falloff</h5>
+            <div id="falloff">
+              If the projectile misses the first creature in the line, it continues to the next one, using the same Finesse check for each target.
+              For every 20 [distance](distance) between the projectile's source and target, the check's total is reduced by 1.
+              (For example, a slugcat throws a spear at a lizard 10 distance away. The check's result is 4 and the lizard's AC is 6, so it continues on and targets another lizard 50 distance away with an AC of 3. It misses the second lizard because of its -2 distance penalty.)
+              If a projectile's Finesse check is reduced to -1 by damage falloff, it is destroyed if it is not an item.
+            </div>
+            <h5>Thrown Items</h5>
+            <div id="Thrown_Items">
+              Any item can be used as a projectile. The item travels to the location of the creature or object it hit, or one tile away from the solid tile it hit.
+              "Impact:" effects of items trigger on a ranged hit.
+              Instead of being destroyed by damage falloff, the item stops in place.
+              After the attack is finished, the item will usually fall from its new location.
+              <div id="embedding">
+                Some items <b>embed</b>. These items will move with the creature, object, or tile they hit, and can be picked up from any [adjacent](adjacency) tiles.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>TREASURY</h3>
+      All of Rainstorm's items.
+      <div id="items">
+        <div id="spear">
+          <b>Spear</b><br/>
+          Size: Medium<br/>
+          Impact: Deals 2d6 (avg. 7) + Power damage and embeds.
+        </div>
+        [TODO: More items.]
+      </div>
+      <h3>BESTIARY</h3>
+      All of Rainstorm's creatures.
+      [TODO: Find a better format for creature stats.]
+      <div id="creatures">
+        <h4>Lizards</h4>
+        <div id="lizards">
+          Lizards are one of the most common creatures in Rain World. Their various subspecies are found all across the world.<br/>
+          All lizards have the ability <b>Armored Head</b>:<br/>
+          <ul id="Armored_Head">
+            <li>At the start of the lizard's turn, it chooses left or right.</li>
+            <li>The lizard takes no damage from melee or projectile attacks that come from the chosen direction.</li>
+          </ul>
+          <br/>
+          <div id="Pink_Lizard">
+            Pink Lizard<br/>
+            <i>A basic lizard with no particularly special abilities.</i><br/>
+            Maximum HP: 10<br/>
+            Abilities: Awareness +2, Finesse +1, Power +2
+            Unarmed Attack: 2d6 + Power (avg. 9) damage.
+          </div>
+        </div>
+        [TODO: More creatures.]
+      </div>
+      <!-- extra stuff --> 
+      <div style="display: none" id="rivu">The developer of Rainstorm. @the.rivulet on discord.</div>
+      <div style="display: none" id="Safe_Tile">A tile is safe if it's directly above the ground, a structure or object that blocks movement, or a creature.</div>
+    </div>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+@font-face {
+  font-family: Jets;
+  src: url(assets/JetBrainsMonoNL-Regular.ttf);
+}
+html {
+  background: #111;
+  color: white;
+  font-family: Jets;
+  font-size: 13px;
+}
+#main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.hint {
+  position: absolute;
+  max-width: 100%;
+  min-width: 40%;
+  background: #333;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+.hint-container:hover > .hint {
+  display: block;
+}
+.hint:empty {
+  display: none !important;
+}
+.hint-container {
+  color: cyan;
+  text-decoration: none;
+}
+.hint-title {
+  color: white;
+}
+.hint-aspects {
+  padding-left: 20px;
+  font-size: 12px;
+  color: #bbb;
+}
+.hint-body {
+  padding-top: 10px;
+  color: white;
+}
+.wawa {
+  animation: click 2s;
+}
+@keyframes click {
+  0% { color: red; }
+  100% { color: white; }
+}
