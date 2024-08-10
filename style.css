@@ -1,12 +1,19 @@
 @font-face {
-  font-family: Jets;
-  src: url(assets/JetBrainsMonoNL-Regular.ttf);
+  font-family: JetsLight;
+  src: url(assets/JetBrainsMonoNL-ExtraLight.ttf);
+}
+@font-face {
+  font-family: JetsBold;
+  src: url(assets/JetBrainsMonoNL-SemiBold.ttf);
 }
 html {
   background: #111;
   color: white;
-  font-family: Jets;
+  font-family: JetsLight;
   font-size: 13px;
+}
+b {
+  font-family: JetsBold;
 }
 #main {
   position: absolute;

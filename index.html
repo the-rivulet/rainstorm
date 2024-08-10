@@ -1,23 +1,29 @@
 <html>
   <head>
-    <title>rainstorm 0.1.0</title>
+    <title>rainstorm 0.2.0</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="rainstorm">
       <!-- the main rulebook... -->
-      <h2 style="display: inline">Welcome to Rainstorm</h2> | <span>ver. 0.1.0</span><br/>
+      <h2 style="display: inline">Welcome to Rainstorm</h2> | <span>ver. 0.2.0</span><br/>
       <h3>OVERVIEW</h3>
       <div id="overview">
-        Rainstorm is a Rain World TTRPG created by [Rivu](rivu). It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
+        Rainstorm is a Rain World TTRPG created by Rivu. It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
         It is based on Monsoon and will probably feel somewhat similar if you have played that before.
         <br/>
-        Contibutions are welcome! You can create a pull request on the repository or just DM Rivu about it.
+        Contibutions are welcome! You can create a pull request on the repository or just ask Rivu (@the.rivulet on discord) about it.
+        <br/>
+        This rulebook may contain spoilers for Rain World. Read at your own risk.
       </div>
       <h3>CHARACTER CREATION</h3>
       <h4>Creation Steps</h4>
       <div id="steps">
-        [TODO]
+        <ol>
+          <li>Select a [species](species).</li>
+          <li>Distribute 10 points among your [abilities](abilities). (This will probably be unbalanced until I add some more abilities.)</li>
+          <li>Select up to 3 [adaptations](adaptations).</li>
+        </ol>
       </div>
       <h4>Stats</h4>
       Each creature has <b>abilities</b>:
@@ -32,16 +38,17 @@
         </li>
         <li id="power"><b>Power</b>:
           A creature with high Power has high physical strength.
-          High Power makes a creature deal more damage with many physical attacks.
+          High Power makes a creature deal more damage with most physical attacks.
         </li>
       </ul>
       [TODO: Add more abilities.]
       <br/>
       They also have various other <b>stats</b>:
       <ul id="stats">
+        <li id="Hit_Points"><b>Hit Points</b>, or <b>HP</b>, are a measure of a creature's vitality. When a creature drops to 0 HP, it dies.</li>
         <li id="speed"><b>Speed</b> is how far a creature can move on its turn.</li>
-        <li id="jump"><b>Jump</b> is how high or far a creature can jump.</li>
-        <li id="Armor_Class"><b>Armor Class</b> (AC) is how difficult it is to hit a creature. This is usually equal to 3 + the creature's [Awareness](awareness).</li>
+        <li id="jump"><b>Jump</b> is how high or far a creature can [jump](movement).</li>
+        <li id="Armor_Class"><b>Armor Class</b> (AC) is how difficult it is to hurt a creature when attacking it. This is usually equal to 3 + the creature's [Awareness](awareness).</li>
       </ul>
       <h4>Species</h4>
       <div id="species">
@@ -49,15 +56,74 @@
         <h5>Slugcat</h5>
         <div id="slugcat">
           <i>Lost in a harsh and indifferent land you must make your own way, with wit and caution as your greatest assets.</i><br/>
-          Maximum HP: 10
-          Unarmed Attack: 1 + Power damage.
+          Maximum [HP](Hit_Points): 10<br/>
+          [Speed](speed): 7<br/>
+          [Unarmed Attack](unarmed): 1 + Power damage.<br/>
           [TODO: Special stuff.]
         </div>
       </div>
       <h3>ADAPTATIONS</h3>
       <div id="adaptations">
-        Adaptations are a character's special abilities. The combination of adaptations is what makes a character unique.
-        [TODO]
+        Adaptations are a character's special abilities. A character's combination of adaptations is what makes them unique.
+        <br/><br/>
+        <div id="counter">
+          <b>Counter</b><br/>
+          <i>You can exploit the window of opportunity when an enemy misses an attack.</i><br/>
+          Whenever an attack misses you, you can take one action immediately.
+        </div>
+        <div id="dash">
+          <b>Dash</b><br/>
+          <i>You can expend energy to move much faster than normal.</i><br/>
+          As an action, move up to 5 tiles in a horizontal line.
+        </div>
+        <div id="wings">
+          <b>Wings</b><br/>
+          <i>You have a pair of small wings on your back which help you glide.</i><br/>
+          You can no longer store items on your back.<br/>
+          Your jump no longer depletes when [moving](movement).<br/>
+          When you fall, you may spend an action to reduce the fall to as little as 1 distance.
+        </div>
+        <div id="grapple">
+          <b>Grapple</b><br/>
+          <i>You can extend a grapple to latch on to things.</i><br/>
+          As an action, launch a grapple at a surface or creature within 5 distance.
+          <ul>
+            <li>If the target is a surface, you are pulled to it, ending up one tile away from it. You can't move or fall further than 5 distance away as long as it lasts.</li>
+            <li>
+              If it is a creature, make a projectile attack against it. On hit, the target becomes grappled to you.
+              While the grapple lasts, you and the target can't willingly move or fall further than 5 distance apart.
+              As an action, the target can make a Power check contested with your Power check. If the target wins, the grapple is disconnected.
+            </li>
+          </ul>
+          You can freely disconnect the grapple at any time.
+          The grapple is also disconnected if it is obstructed (for example, if a solid object is placed in its way).
+        </div>
+        <div id="athletic">
+          <b>Athletic</b><br/>
+          <i>You have a natural - or unnatural - quickness and endurance.</i><br/>
+          Your speed and jump each increase by 3.
+        </div>
+        <div id="hyperaction">
+          <b>Hyperaction</b><br/>
+          <i>You're in constant motion and you act much faster than most.</i><br/>
+          Your AC increases by 1 due to your constant movement, and you gain +3 to Awareness checks for initative.
+        </div>
+        <div id="Internal_Fire">
+          <b>Internal Fire</b><br/>
+          <i>Your body is always hot to the touch, scorching anything in contact with it.</i><br/>
+          When you hit a creature with a melee attack, it is set [on fire](burning).
+        </div>
+        <div id="Internal_Fire">
+          <b>Internal Fire</b><br/>
+          <i>Your body is always hot to the touch, scorching anything in contact with it.</i><br/>
+          When you hit a creature with a melee attack, it is set [on fire](burning).
+        </div>
+        <!-- 
+        ideas: features that move things around are cool! think of ori's bash
+        also features that help you make enemy attacks useful - ori's bash again, and v1's parry
+        ofc, those work on enemy projectiles... but I'm sure I could find something for melee as well
+        rainstorm is meant to be a mostly ranged system, but features that make melee more powerful could be cool
+        -->
       </div>
       <h3>BASIC RULES</h3>
       <div id="Basic_Rules">
@@ -65,7 +131,7 @@
         <div id="checks">
           To make a check, roll a six-sided die (1d6) and add the relevant [ability score](abilities), then compare the total to a target number.
           If the check total is equal or greater than the target, the check is successful.
-          <div id="Difficulty_Class">For an attack, the target number is the defender's [Armor Class](Armor_Class). Most other checks have a certain <b>Difficulty Class</b>.</div>
+          <div id="Difficulty_Class">For an attack, the target number is the defender's [Armor Class](Armor_Class). Other checks have a certain <b>Difficulty Class</b>.</div>
         </div>
         <div id="contests">
           In a contest, two creatures both make checks. The creature with the highest total is the winner.
@@ -73,17 +139,41 @@
         </div>
         <h4>Distance</h4>
         <div id="distance">
-          In Rainstorm, distance is counted orthogonally. Diagonal moves are always counted as 2.
+          In Rainstorm, distance is counted orthogonally. Diagonals are always counted as 2.
           <div id="adjacency">Two tiles are <b>adjacent</b> if they touch orthogonally (a distance of 1).</div>
         </div>
         <h4>Falling</h4>
         <div id="falling">
-          After landing from a [drop](dropping), a creature takes 1 damage for each tile it fell above 10.
-          <div id="Damage_Transfer">If the fall was broken by another creature, half the damage (rounded down) is transferred to it.</div>
+          A creature or object that falls will continue moving downwards until it reaches a pole or [safe](Safe_Tile) tile.
+          If the fall was stopped by a safe tile, it takes 1 damage for each tile it fell above 10.
+          A creature also falls at the end of their turn.
+          <div id="Damage_Transfer">If the fall was broken by a living creature, half the damage (rounded down) is transferred to it.</div>
+        </div>
+        <h4>Conditions</h4>
+        <div id="conditions">
+          A creature can have many different conditions at the same time, but multiple of the same condition do not stack.
+          <div id="burning"><b>Burning</b>:
+            You lose 1d4 (avg. 2.5) HP at the start of each of your turns. You stop burning when you are immersed in water.
+            You or an adjacent creature can also spend two actions to end the condition on you.
+          </div>
         </div>
         <h4>Crafting</h4>
         <div id="crafting">
           [TODO]
+        </div>
+        <h4>Rain & Shelters</h4>
+        <div id="rain">
+          One of Rain World's defining features is the Rain: a deadly storm that falls at the end of every cycle.
+          The Rain's arrival is signaled by the ground shaking, the sky darkening, and drops of water beginning to fall.
+          Once the Rain's full force sets in, anything exposed to it will take 1 damage at the start of each round.
+          The damage increases by 1 each round that the Rain continues.
+          <br/>
+          Underground layers are usually flooded as well.
+        </div>
+        <div id="shelters">
+          Shelters are ancient structures built to withstand the Rain, cycle after cycle.
+          They have watertight doors that automatically lock when creatures enter and unlock when the Rain ends.
+          A creature that sleeps in a shelter (or any area safe from the rain) <b>hibernates</b>, restoring its [HP](Hit_Points) to full.
         </div>
       </div>
       <h3>INVENTORY</h3>
@@ -92,6 +182,7 @@
         <ul id="Character_Inventory">
           <li>Two hand slots, which can each carry a small or medium item. If you have at least one hand, you can also use all your hand slots to carry a large item.</li>
           <li>One mouth slot, which can carry a small item.</li>
+          <li>One back slot, which can carry a weapon (any item with the Weapon tag).</li>
         </ul>
         You can manage your inventory by taking these [actions](actions):
         <ul id="Inventory_Actions">
@@ -102,7 +193,7 @@
       </div>
       <h3>COMBAT</h3>
       <div id="combat">
-        Rainstorm's pride. Combat takes place on a 2D map with one horizontal and one vertical dimension.
+        Rainstorm's pride. Combat takes place on a two-dimensional map with one horizontal and one vertical dimension.
         <h4>Combat Flow</h4>
         <div id="Combat_Flow">
           A combat usually follows these steps:
@@ -118,10 +209,15 @@
           They can also move a number of tiles equal to their [Speed](speed).
           Creatures usually can't take actions or move outside of their own turn.
         </div>
+        <h4>Timing</h4>
+        <div id="timing">
+          When it's not your turn, you are considered to have 0 actions and 0 movement. However, you can still use effects that don't require either.
+          Your effects can't interrupt the active creature's effects, unless they specifically state that they can.
+        </div>
         <h4>Movement</h4>
         <div id="movement">
           A creature can move up, left, or right by spending 1 tile of [movement](speed). If the destination is [unsafe](Safe_Tile), the move <b>also</b> costs 1 tile of [jump height](jump).
-          <div id="dropping">To move down, a creature's only option is to <b>fall</b>, moving downwards until it reaches a pole or [safe](Safe_Tile) tile. If the fall was stopped by a safe tile, the creature also risks [fall damage](falling).</div>
+          <div id="dropping">To move down, a creature's only option is to <b>fall</b>, risking [fall damage](falling). After landing, their jump is fully restored.</div>
           <div id="space">A creature can move through an allied creature's space but cannot stop there. However, one tile can contain any number of items, including corpses.</div>
         </div>
         <h4>Attacks</h4>
@@ -151,11 +247,15 @@
               Any item can be used as a projectile. The item travels to the location of the creature or object it hit, or one tile away from the solid tile it hit.
               "Impact:" effects of items trigger on a ranged hit.
               Instead of being destroyed by damage falloff, the item stops in place.
-              After the attack is finished, the item will usually fall from its new location.
+              After the attack is finished, the item will fall from its new location.
               <div id="embedding">
-                Some items <b>embed</b>. These items will move with the creature, object, or tile they hit, and can be picked up from any [adjacent](adjacency) tiles.
+                Some items <b>embed</b>. These items will stick to and move with the creature, object, or tile they hit, and can be picked up from any [adjacent](adjacency) tiles.
               </div>
             </div>
+          </div>
+          <br/>
+          <div id="Sneak_Attacks">
+            Either type of attack gets +1 to hit if the target cannot see you.
           </div>
         </div>
       </div>
@@ -164,7 +264,9 @@
       <div id="items">
         <div id="spear">
           <b>Spear</b><br/>
+          <i>A length of rebar, a simple weapon found all across the world.</i><br/>
           Size: Medium<br/>
+          Tags: Weapon, Metal<br/>
           Impact: Deals 2d6 (avg. 7) + Power damage and embeds.
         </div>
         [TODO: More items.]
@@ -175,26 +277,26 @@
       <div id="creatures">
         <h4>Lizards</h4>
         <div id="lizards">
-          Lizards are one of the most common creatures in Rain World. Their various subspecies are found all across the world.<br/>
+          Lizards are one of the most common creatures in Rain World. Their various subspecies are found nearly everywhere.<br/>
           All lizards have the ability <b>Armored Head</b>:<br/>
           <ul id="Armored_Head">
             <li>At the start of the lizard's turn, it chooses left or right.</li>
-            <li>The lizard takes no damage from melee or projectile attacks that come from the chosen direction.</li>
+            <li>The lizard takes no damage from melee or projectile attacks that come from the chosen direction, and projectiles that come from that direction won't embed in it.</li>
           </ul>
           <br/>
           <div id="Pink_Lizard">
             Pink Lizard<br/>
             <i>A basic lizard with no particularly special abilities.</i><br/>
-            Maximum HP: 10<br/>
-            Abilities: Awareness +2, Finesse +1, Power +2
-            Unarmed Attack: 2d6 + Power (avg. 9) damage.
+            Maximum [HP](Hit_Points): 10<br/>
+            [Speed](speed): 6<br/>
+            [Abilities](abilities): Awareness +2, Finesse +1, Power +3<br/>
+            [Unarmed Attack](unarmed): 2d6 + Power (avg. 9) damage.
           </div>
         </div>
         [TODO: More creatures.]
       </div>
       <!-- extra stuff --> 
-      <div style="display: none" id="rivu">The developer of Rainstorm. @the.rivulet on discord.</div>
-      <div style="display: none" id="Safe_Tile">A tile is safe if it's directly above the ground, a structure or object that blocks movement, or a creature.</div>
+      <div style="display: none" id="Safe_Tile">A tile is safe if it's directly above the ground, a structure or object that blocks movement, or a living creature.</div>
     </div>
     <script src="javascript/main.js"></script>
   </body>
