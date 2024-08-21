@@ -1,12 +1,12 @@
 <html>
   <head>
-    <title>rainstorm 0.2.1a</title>
+    <title>rainstorm 0.3.0</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="rainstorm">
       <!-- the main rulebook... -->
-      <h2 style="display: inline">Welcome to Rainstorm</h2> | <span>ver. 0.2.1a</span><br/>
+      <h2 style="display: inline">Welcome to Rainstorm</h2> | <span>ver. 0.3.0</span><br/>
       <h3>OVERVIEW</h3>
       <div id="overview">
         Rainstorm is a Rain World TTRPG created by Rivu. It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
@@ -40,10 +40,14 @@
           A creature with high Power has high physical strength.
           High Power makes a creature deal more damage with most physical attacks.
         </li>
-        <!-- <li id="lore"><b>Lore</b>:
+        <li id="lore"><b>Lore</b>:
           A creature with high Lore has accumulated a lot of knowledge about the world and is generally more likely to know any given information.
-          [TODO: Lore will be used for magic later.]
-        </li> -->
+          High Lore increases the number of known [Rites](rites).
+        </li>
+        <li id="will"><b>Will</b>:
+          A creature with high Will -
+          Each point of Will increases a creature's maximum [HP](Hit_Points) and [Blessings](blessings) by 2.
+        </li>
       </ul>
       [TODO: Add more abilities.]
       <br/>
@@ -60,7 +64,7 @@
         <h5>Slugcat</h5>
         <div id="slugcat">
           <i>Lost in a harsh and indifferent land you must make your own way, with wit and caution as your greatest assets.</i><br/>
-          Maximum [HP](Hit_Points): 10<br/>
+          Maximum [HP](Hit_Points): 10 + Will x 2<br/>
           [Speed](speed): 7<br/>
           [Unarmed Attack](unarmed): 1 + Power damage.<br/>
           [TODO: Special stuff.]
@@ -92,7 +96,9 @@
           <i>You can extend a grapple to latch on to things.</i><br/>
           As an action, launch a grapple at a surface or creature within 5 distance.
           <ul>
-            <li>If the target is a surface, you are pulled to it, ending up one tile away from it. You can't move or fall further than 5 distance away as long as it lasts.</li>
+            <li>
+              If the target is a surface, you are pulled to it, ending up one tile away from it. You can't move or fall further than 5 distance away as long as it lasts.
+            </li>
             <li>
               If it is a creature, make a melee attack against it. On hit, the target becomes grappled to you.
               While the grapple lasts, you and the target can't willingly move or fall further than 5 distance apart.
@@ -100,7 +106,7 @@
             </li>
           </ul>
           You can freely disconnect the grapple at any time.
-          The grapple is also disconnected if it is obstructed (for example, if a solid object is placed in its way).
+          The grapple is also disconnected if it is obstructed (for example, if a solid object is placed in its way) or if you and the target are forced further than 5 distance apart.
         </div><br/>
         <div id="athletic">
           <b>Athletic</b><br/>
@@ -123,6 +129,48 @@
         ofc, those work on enemy projectiles... but I'm sure I could find something for melee as well
         rainstorm is meant to be a mostly ranged system, but features that make melee more powerful could be cool
         -->
+      </div>
+      <h3>SPELLBOOK</h3>
+      All of Rainstorm's Rites and associated rules.
+      <div id="rites">
+        Rites are magical effects that alter the world in some way or another.
+        Generally, a creature cannot simply teach the Rites they know to others - Rites are more often found in the form of magical scrolls, if they can be found at all.
+        A player character begins with a number of Rites equal to their [Lore](lore). Other creatures usually don't have Rites.
+        <br/>
+        <div id="blessings">
+          Each Rite costs 1 Blessing each time it's used. A character has a maximum Blessings of 3 by default.
+          Each point of Will deepens a character's magical reserves and increases this maximum by 2.
+        </div>
+        Most Rites can be used at [almost any time](timing).
+        If a Rite asks for a "target", you can specify anything you can see. A "target creature" can be you.
+        <br/><br/>
+        <div id="hasten">
+          <b>Hasten</b><br/>
+          Target creature becomes [hastened](hastened) until the start of your next turn.
+        </div><br/>
+        <div id="kindle">
+          <b>Kindle</b><br/>
+          Target creature is set [on fire](burning).
+        </div><br/>
+        <div id="halt">
+          <b>Halt</b><br/>
+          Target creature or dropped item is [stopped](stopped) until the start of your next turn.
+        </div><br/>
+        <div id="teleport">
+          <b>Teleport</b><br/>
+          Mark two target tiles until the start of your next turn. The marks are visible to anyone.
+          Any creature or item that moves into one tile is immediately moved to the other.
+        </div><br/>
+        <div id="fly">
+          <b>Fly</b><br/>
+          Target creature doesn't fall and their jump height doesn't deplete until the start of your next turn.
+        </div><br/>
+        <div id="extend">
+          <b>Extend</b><br/>
+          The next melee attack that target creature makes this turn has its range increased by 5.
+          (Because most melee attacks have a base range of 1, this will usually increase it to 6.)
+          Multiple instances of Extend can all apply to the same attack.
+        </div><br/>
       </div>
       <h3>BASIC RULES</h3>
       <div id="Basic_Rules">
@@ -155,6 +203,13 @@
             You lose 1d4 (avg. 2.5) HP at the start of each of your turns. You stop burning when you are immersed in water.
             You or an adjacent creature can also spend two actions to end the condition on you.
           </div>
+          <div id="hastened"><b>Hastened</b>:
+            Your [speed](speed) increases by 3, and you can take one additional action on your turn.
+          </div>
+          <div id="stopped"><b>Stopped</b>:
+            You can't move, fall, or be moved by any means. This condition can be applied to items.
+            An item with this condition can't be picked up, dropped, or moved between slots, and if it has the Spear tag, it counts as a pole as long as it's not being carried.
+          </div>
         </div>
         <h4>Crafting</h4>
         <div id="crafting">
@@ -172,7 +227,7 @@
         <div id="shelters">
           Shelters are ancient structures built to withstand the Rain, cycle after cycle.
           They have watertight doors that automatically lock when creatures enter and unlock when the Rain ends.
-          A creature that sleeps in a shelter (or any area safe from the rain) <b>hibernates</b>, restoring its [HP](Hit_Points) to full.
+          A creature that sleeps in a shelter (or any area safe from the rain) <b>hibernates</b>, restoring its [HP](Hit_Points) and [Blessings](blessings) to full.
         </div>
       </div>
       <h3>INVENTORY</h3>
@@ -211,11 +266,11 @@
         <h4>Timing</h4>
         <div id="timing">
           When it's not your turn, you are considered to have 0 actions and 0 movement. However, you can still use effects that don't require either.
-          Your effects can't interrupt the active creature's effects, unless they specifically state that they can.
+          However, your effects can't interrupt the active creature's effects, unless they specifically state that they can.
         </div>
         <h4>Movement</h4>
         <div id="movement">
-          A creature can move up, left, or right by spending 1 tile of [movement](speed). If the destination is [unsafe](Safe_Tile), the move <b>also</b> costs 1 tile of [jump height](jump).
+          A creature can move up, left, or right by spending 1 tile of [movement](speed). If the destination is [unsafe](Safe_Tile) and isn't a pole, the move <b>also</b> costs 1 tile of [jump height](jump).
           <div id="dropping">To move down, a creature's only option is to <b>fall</b>, risking [fall damage](falling). After landing, their jump is fully restored.</div>
           <div id="space">A creature can move through an allied creature's space but cannot stop there. However, one tile can contain any number of items, including corpses.</div>
         </div>
@@ -224,10 +279,10 @@
           An attack is a special kind of [Finesse](finesse) [check](checks) against the target's AC. Attacks come in two types: melee and projectile.
           <div id="Melee_Attacks">
             <b>Melee</b> attacks target one creature within a certain [distance](distance). If the check succeeds, the attack hits it.
-            "Strike:" effects of items trigger on a melee hit.
+            "Strike:" effects of items trigger on a melee hit. Items have a melee attack range of 1 unless specified.
             <h5>Unarmed Attacks</h5>
             <div id="unarmed">
-              Any creature can make a melee attack by spending one [action](actions). The damage dealt depends on the type of creature that used it, noted in each creature's description.
+              Any creature can make a melee attack with 1 range by spending one [action](actions). The damage dealt depends on the type of creature that used it, noted in each creature's description.
             </div>
           </div>
           <br/>
@@ -265,7 +320,7 @@
           <b>Spear</b><br/>
           <i>A length of rebar, a simple weapon found all across the world.</i><br/>
           Size: Medium<br/>
-          Tags: Weapon, Metal<br/>
+          Tags: Weapon, Metal, Spear<br/>
           Impact: Deals 2d6 (avg. 7) + Power damage and embeds.
         </div>
         [TODO: More items.]
@@ -286,9 +341,9 @@
           <div id="Pink_Lizard">
             Pink Lizard<br/>
             <i>A basic lizard with no particularly special abilities.</i><br/>
-            Maximum [HP](Hit_Points): 10<br/>
+            Maximum [HP](Hit_Points): 25<br/>
             [Speed](speed): 6<br/>
-            [Abilities](abilities): Awareness +2, Finesse +1, Power +3<br/>
+            [Abilities](abilities): Awareness +2, Finesse +1, Power +3, Lore 0, Will 0<br/>
             [Unarmed Attack](unarmed): 2d6 + Power (avg. 9) damage.
           </div>
         </div>
