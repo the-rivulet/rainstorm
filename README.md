@@ -1,8 +1,14 @@
 # Rainstorm
 Rainstorm is a Rain World TTRPG created by Rivu. It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
-It is based on Monsoon (view book [here](https://docs.google.com/document/d/1fzTmmMGFaIGbE8kf-QR5wNup7WUS8dciCVOHrH06bPY/edit)) and will probably feel somewhat similar if you have played that before.
+It is based on Monsoon and will probably feel somewhat similar if you have played that before.
+You can view the Rainstorm book [here](the-rivulet.github.io/rainstorm/) and the Monsoon book [here](https://docs.google.com/document/d/1fzTmmMGFaIGbE8kf-QR5wNup7WUS8dciCVOHrH06bPY/edit).
 
 ## Changelog
+### v0.3.0 - August 21, 2024
+* Added Rites and the magic system.
+* Added 2 new abilities: Lore and Will.
+* Increased the max HP of Pink Lizards.
+* Various little changes.
 ### v0.2.1 - August 14, 2024
 * Minor edits to a couple of adaptations.
 ### v0.2.0 - August 9, 2024
