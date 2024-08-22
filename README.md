@@ -4,6 +4,8 @@ It is based on Monsoon and will probably feel somewhat similar if you have playe
 You can view the Rainstorm book [here](https://the-rivulet.github.io/rainstorm/) and the Monsoon book [here](https://docs.google.com/document/d/1fzTmmMGFaIGbE8kf-QR5wNup7WUS8dciCVOHrH06bPY/edit).
 
 ## Changelog
+### v0.3.1 - August 22, 2024
+* Rites now have a distance limit.
 ### v0.3.0 - August 21, 2024
 * Added Rites and the magic system.
 * Added 2 new abilities: Lore and Will.
