@@ -1,7 +1,7 @@
 # Rainstorm
 Rainstorm is a Rain World TTRPG created by Rivu. It is designed to be intuitive and extensible, allowing for diverse strategies without being unnecessarily complex.
 It is based on Monsoon and will probably feel somewhat similar if you have played that before.
-You can view the Rainstorm book [here](the-rivulet.github.io/rainstorm/) and the Monsoon book [here](https://docs.google.com/document/d/1fzTmmMGFaIGbE8kf-QR5wNup7WUS8dciCVOHrH06bPY/edit).
+You can view the Rainstorm book [here](https://the-rivulet.github.io/rainstorm/) and the Monsoon book [here](https://docs.google.com/document/d/1fzTmmMGFaIGbE8kf-QR5wNup7WUS8dciCVOHrH06bPY/edit).
 
 ## Changelog
 ### v0.3.0 - August 21, 2024
